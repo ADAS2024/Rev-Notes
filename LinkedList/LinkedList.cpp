@@ -56,10 +56,15 @@ class DoublyLinkedList {
 				if (curr) {
 					cout << "Data for curr " << curr << ": " << curr->data << endl;
 					curr = curr->next;
+
+				// NOTE: This else case is never reached due to being under the curr check. (and thus the statment isnt printed out)
+				// After that check is made, i will be incremented and checked against list's length, exiting if its greater denoting the end of the list.
+				// To fix this, we can move the cout statement to after the for loop
 				} else {
-					cout << "Reached end of list." << endl;
+					cout << "Reached end of list." << endl;	// NOTE: can remove or change to no existing curr or something
 				}
 			}
+			cout << "Reached end of list." << endl;			// NOTE: moved statement
 	     }
 	  }
 
@@ -110,6 +115,8 @@ class DoublyLinkedList {
 
 int main() {
     DoublyLinkedList list;
+
+	list.print();
 
     list.add(1);
     list.add(2);
